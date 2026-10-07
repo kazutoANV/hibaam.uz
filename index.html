@@ -1027,8 +1027,8 @@ async function sendVerification(target, type){
     startVerifyExpiry(600);
     setTimeout(()=>inlineCode?.focus(),80);
     return true;
-  } catch {
-    toast("Tasdiqlash kodini yuborib boʻlmadi.");
+  } catch (e) {
+    toast("Tasdiqlash kodini yuborib boʻlmadi" + (e && e.message ? " (" + e.message + ")" : "") + ".");
     return false;
   }
 }
